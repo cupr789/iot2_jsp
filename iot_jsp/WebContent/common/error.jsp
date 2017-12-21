@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>IOT</title>
+<title>Insert title here</title>
 </head>
 <body>
-안녕하세요!
-<br>
-<a href="/user/list.do">유저리스트</a>
+그런건  없다<br>
+확인해바
 </body>
 </html>
