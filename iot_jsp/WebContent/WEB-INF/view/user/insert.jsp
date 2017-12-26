@@ -8,6 +8,12 @@
 <title>유저입력</title>
 </head>
 <body>
+<%
+
+String resultStr = (String)request.getAttribute("insert");
+out.println(resultStr);
+
+%>
 
 </body>
 </html>
