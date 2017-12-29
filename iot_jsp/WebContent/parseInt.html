@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+var calObj = function(ids){
+	var num1,num2,op;
+	var getValue = function(id){
+		return document.getElementById(id).value;
+	}
+	
+	var setValue = function(){
+		num1 = parseInt(getValue(ids["num1"]));
+		num2 = parseInt(getValue(ids["num2"]));
+		op = getValue(ids["op"]);
+	}
+	
+	var add = function(){
+		return num1+num2;
+	}
+	
+	var minus = function(){
+		return num1-num2;
+	}
+	
+	var multiple = function(){
+		return num1*num2;
+	}
+	
+	var divide = function(){
+		return num1/num2;
+	}
+	this.cal1 = function(){
+		alert(this===window);
+		alert(this);
+		alert(window);
+		if(op=="+"){
+			return add();
+		}
+		else if(op=="-"){
+			return minus();
+		}
+		else if(op=="*"){
+			return multiple();
+		}
+		else if(op=="/"){
+			return divide();
+		}
+	}
+	
+	setValue();
+	
+}
+
+//calObj();
+
+function cal1(){
+	var param = {num1:"num1",num2:"num2",op:"op"};
+	alert(this===window);
+	var co = new calObj(param);
+	document.getElementById("result").value = co.cal1();
+	
+}
+
+
+function cal(){
+	var opObj = document.getElementById("op");
+	
+	var num1Obj = document.getElementById("num1");
+	var num2Obj = document.getElementById("num2");
+	var num1 = parseInt(num1Obj.value);
+	var num2 = parseInt(num2Obj.value);
+	
+	if(isNaN(num1)){
+		alert("첫번째 숫자 입력하라고 자식아!!");
+		num1Obj.focus();
+		return;
+	}
+	if(isNaN(num2)){
+		alert("두번째 숫자 입력하라고 자식아!!");
+		num2Obj.focus();
+		return;
+	}
+	
+	if(opObj.value===("+")){
+		document.getElementById("result").value = num1+num2;
+	}
+	else if(opObj.value===("-")){
+		document.getElementById("result").value = num1-num2;
+	}
+	else if(opObj.value===("*")){
+		document.getElementById("result").value = num1*num2;
+	}
+	else if(opObj.value===("/")){
+		document.getElementById("result").value = num1/num2;
+	}
+	 // window.parseInt의 아쉬운점은 숫자랑 문자가 같이 있을 경우 문자앞 숫자만 읽어드림 그래서 Number가 있음
+}
+</script>
+<body>
+<input type="text" id="num1"> 
+<select id="op">
+<option value="+">더하기 </option> 
+<option value="-">빼기</option>
+<option value="*">곱하기</option>
+<option value="/">나누기</option>
+</select> 
+
+<input type="text" id="num2"> = 
+<input type="text" id="result"><br><input type="button" value="계산하기" onclick="cal1()">
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+	function checkBtn(){
+		alert(1);
+	}
+	function test(){
+		var t1obj = document.getElementById("t1");
+		alert(t1obj.type);
+		var inputObjs = document.getElementsByTagName("input");
+		for(var i=0; i<inputObjs.length;i++){
+			var obj = inputObjs[i];
+			if(obj.type=="button"){
+				if(obj.id.indexOf("btn")!=-1){
+					obj.onclick=checkBtn;
+				}
+			}
+		}
+	}
+</script>
+<body onload="test()"> <!-- 바디태그를 다 읽고나서 onload 이벤트인 test()를 실행후 화면에 출력 -->
+	<input type="text" id="t1">
+	<input type ="button" id="btn1" >
+	<input type ="button" id="btn2" >
+	<input type ="button" id="btn3" >
+</body>
+</html>

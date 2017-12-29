@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+.n_div{
+display:none;
+}
+.s_div{
+display:'';
+background-color:blue;
+color:white;
+}
+</style> <!-- style 에서 앞에 .이 붙어있으면 클래스를 찾고 #이 붙으면 id를 찾는거고 아무것도 없으면 태그를 찾는다 -->
+<script>
+function showDiv(){
+document.getElementById("result_div").className="s_div";	
+}
+
+
+/* 
+function showDiv(){
+document.getElementById("result_div").class="n_div";	
+} */
+</script>
+<body>
+<div class="n_div" id="result_div">아하하하하하하하하핳하</div>
+
+<!-- <div style="display:none" id="result_div">아하하하하하하하하핳하</div> -->
+
+<input type="button" onclick="showDiv()" value="나와라">
+</body>
+</html>

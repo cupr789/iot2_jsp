@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+
+var rNum = Math.floor(Math.random() * 10);
+alert(rNum);
+//floor는  아무런 조치없이 값을 넣어주면 정수로 입력받겠다는 뜻 결국 내림하겠다는뜻
+function printBom(){
+		alert("폭탄이 펑");
+	}
+	
+	function test(){
+		var inputObjs = document.getElementsByTagName("input");
+		for(var i=0; i<inputObjs.length;i++){
+			var obj = inputObjs[i];
+			if(obj.type=="button"){
+				if(obj.value==rNum){
+					obj.onclick=printBom.bind(null,alert("아나"));
+				}
+			}
+		}
+	}
+	
+	
+/* 	for(var el in btnObj){
+		if(el.type=="button" && idx==rNum){
+			alert(rNum);
+		}
+	} */
+ 
+</script>
+
+<body onload="test()">
+
+	<input type="button"  value="0">
+	<input type="button"  value="1">
+	<input type="button"  value="2">
+	<input type="button"  value="3">
+	<input type="button"  value="4">
+	<input type="button"  value="5">
+	<input type="button"  value="6">
+	<input type="button"  value="7">
+	<input type="button"  value="8">
+	<input type="button"  value="9">
+	
+</body>
+
+</html>
