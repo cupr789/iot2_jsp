@@ -50,15 +50,14 @@ function checkValue(){
  } */
 </script>
 <body>
-<form action="./location.html" method="get" onclick="checkValue(this)"> 
+<form action="./login_ok.jsp" method="get" onsubmit="return checkValue(this)"> 
 <!-- form태그의 디폴트 방식은 get방식 = (method="get")   ,    action은 기입된 주소에 값을 전달(기입된 정보 없으면 디폴트 스스로에게)-->
 	<h2 id="hText">로그인</h2><br>
-		아이디:<input type="text" name="id" id="user_id" data-val="5" data-msg="아이디 입력하라고!!"><br>
-		비밀번호:<input type="password" name="pwd" id="user_pwd" data-val="5" data-msg="비밀번호 입력하라고!!"><br>
+		아이디:<input type="text" name="user_id" id="user_id" data-val="5" data-msg="아이디 입력하라고!!"><br>
+		비밀번호:<input type="password" name="user_pwd" id="user_pwd" data-val="5" data-msg="비밀번호 입력하라고!!"><br>
 	<!--  <input type="submit" id="loginBtn" value="로그인" ><br> <!-- onclick="login(this)" -->
 	
-	 <input type="button" id="loginBtn" value="작동기"><br>
-	 <input onsubmit="" type="button" id="loginBtn" value="작동기"><br>
+	 <input type="submit" id="loginBtn" value="작동기"><br>
 </form>
 </body>
 </html>
